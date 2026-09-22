@@ -103,22 +103,23 @@ git ls-files | grep -x ".env"                      # confirms .env is untracked
 
 All three return no matches.
 
-## Reflection on LLM reliability in a physics context At first I had a difficult time getting 
-the LLM to offer me any concrete statements when asked directly for a reference or value with 
-uncertainty. This is illustrated in prompt 1 of the responses.json where I request 3 citations 
-for papers on cosmic ray acceleration between a certain year range. The LLM outright refuses 
-to provide citations and even avoids giving vague references like "Look at Zhang et al. 2011". 
-This might be due to previous models providing false citations/DOIs and now by default they 
-avoid providing citations at all. Then, I moved to testing direct calculations of the Hubble 
-constant from chat provided "real supernova data" which ended up being incorrect. The provided 
-Supernovae are all exisiting objects but the given distances and recession velocities are not 
-accurate. Then, it calculates Hubble's constant as 227 km/s/Mpc and does not acknowlege how 
-different this is from the literature values between 67 - 76 km/s/Mpc. I believe the main 
-issue the model had was with the velocity values because it was consistently providing 
-explosion velocities rather than recession velocities. Lastly, I explored the LLM's ability to 
-propogate error for a simple doppler shift calculation. The model was able to calculate the 
-energy shift and uncertainty but the final provided value did not have correct significant 
-figures. I deemed this example approximately correct.
+## Reflection on LLM reliability in a physics context
+ At first I had a difficult time getting the LLM to offer me any concrete statements when 
+asked directly for a reference or value with uncertainty. This is illustrated in prompt 1 of 
+the responses.json where I request 3 citations for papers on cosmic ray acceleration between a 
+certain year range. The LLM outright refuses to provide citations and even avoids giving vague 
+references like "Look at Zhang et al. 2011". This might be due to previous models providing 
+false citations/DOIs and now by default they avoid providing citations at all. Then, I moved 
+to testing direct calculations of the Hubble constant from chat provided "real supernova data" 
+which ended up being incorrect. The provided Supernovae are all exisiting objects but the 
+given distances and recession velocities are not accurate. Then, it calculates Hubble's 
+constant as 227 km/s/Mpc and does not acknowlege how different this is from the literature 
+values between 67 - 76 km/s/Mpc. I believe the main issue the model had was with the velocity 
+values because it was consistently providing explosion velocities rather than recession 
+velocities. Lastly, I explored the LLM's ability to propogate error for a simple doppler shift 
+calculation. The model was able to calculate the energy shift and uncertainty but the final 
+provided value did not have correct significant figures. I deemed this example approximately 
+correct.
 
    
 
